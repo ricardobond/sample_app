@@ -37,6 +37,7 @@ group :test do
   gem 'rspec-rails'
   gem 'growl'
   gem 'rb-fsevent'
+  gem 'factory_girl_rails'
 end
 
 group :production do
