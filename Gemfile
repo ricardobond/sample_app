@@ -38,6 +38,8 @@ group :test do
   gem 'growl'
   gem 'rb-fsevent'
   gem 'factory_girl_rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 
 group :production do
