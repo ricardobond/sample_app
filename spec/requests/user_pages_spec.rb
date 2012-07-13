@@ -145,7 +145,15 @@ describe "User pages" do
 
       it { should have_content('error') }
     end
-
   end
   
+  describe "destroy" do
+    let(:admin) { FactoryGirl.create(:admin) }
+    
+    before { sign_in admin }
+    
+    it "should not be able to delete admin user" do
+      expect { delete user_path(admin) }.to_not change(User, :count)
+    end
+  end
 end
