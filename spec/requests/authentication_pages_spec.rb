@@ -19,6 +19,9 @@ describe "AuthenticationPages" do
 
       it { should have_selector('title', text: 'Sign in') }
       it { should have_error_message('Invalid') }
+      
+      it { should_not have_link('Profile') }
+      it { should_not have_link('Settings') }
 
       describe "after visiting another page" do
         before { click_link "Home" }
@@ -106,6 +109,16 @@ describe "AuthenticationPages" do
       
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(user) }
+        specify { response.should redirect_to(root_path) }
+      end
+      
+      describe "GET signup page" do
+        before { get signup_path }
+        specify { response.should redirect_to(root_path) }
+      end
+      
+      describe "submitting a POST request to the Users#create action" do
+        before { post users_path }
         specify { response.should redirect_to(root_path) }
       end
     end
