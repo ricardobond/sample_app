@@ -66,4 +66,31 @@ describe "Micropost pages" do
       end
     end
   end
+
+  describe "sidebar" do
+
+    describe "for users with no one micropost" do
+      it { should_not have_content("#{user.microposts.count} micropost") }
+    end
+
+    describe "for users with one micropost" do
+      before do
+        FactoryGirl.create(:micropost, user: user)
+        sign_in user
+        visit root_path
+      end
+      it { should have_content("1 micropost") }
+    end
+
+    describe "for users with more than one micropost" do
+      before do
+        FactoryGirl.create_list(:micropost, 31, user: user)
+        sign_in user
+        visit root_path
+      end
+
+      it { should have_content("#{user.microposts.count} microposts") }
+    end
+  end
+
 end
