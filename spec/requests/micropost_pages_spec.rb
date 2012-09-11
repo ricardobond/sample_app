@@ -41,5 +41,13 @@ describe "Micropost pages" do
         expect { click_link "delete" }.to change(Micropost, :count).by(-1)
       end
     end
+
+    describe "as a incorrect user" do
+      let(:new_user) { FactoryGirl.create(:user) }
+      let(:new_micropost) { FactoryGirl.create(:micropost, user: user) }
+      before { visit user_path(new_user) }
+
+      it { should_not have_link("delete", href: microposts_path(new_micropost)) }
+    end
   end
 end
