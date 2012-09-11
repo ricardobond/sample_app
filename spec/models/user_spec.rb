@@ -157,7 +157,7 @@ describe User do
 
     describe "status" do
       let(:unfollowed_post) do
-        FactoryGirl.create(:micropost, user:FactoryGirl.create(:user))
+        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
       end
 
       its(:feed) { should include(newer_micropost) }
