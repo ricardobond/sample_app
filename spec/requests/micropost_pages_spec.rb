@@ -50,4 +50,20 @@ describe "Micropost pages" do
       it { should_not have_link("delete", href: microposts_path(new_micropost)) }
     end
   end
+
+  describe "micropost pagination" do
+    before do
+      50.times { FactoryGirl.create(:micropost, user: user) }
+      visit user_path(user)
+    end
+
+    it { should have_link('Next') }
+    its(:html) { should match('>2</a>') }
+
+    it "should list each micropost" do
+      user.microposts.paginate(page: 1).each do |micropost|
+        page.should have_selector("li", text: micropost.content)
+      end
+    end
+  end
 end
