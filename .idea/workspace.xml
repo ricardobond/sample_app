@@ -31,7 +31,7 @@
       <file leaf-file-name="relationships_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/relationships_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="22" selection-start="213" selection-end="213" vertical-scroll-proportion="0.15841584">
+            <state line="16" column="46" selection-start="378" selection-end="378" vertical-scroll-proportion="0.42244226">
               <folding />
             </state>
           </provider>
@@ -1233,7 +1233,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/relationships_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="22" selection-start="213" selection-end="213" vertical-scroll-proportion="0.15841584">
+        <state line="16" column="46" selection-start="378" selection-end="378" vertical-scroll-proportion="0.42244226">
           <folding />
         </state>
       </provider>
